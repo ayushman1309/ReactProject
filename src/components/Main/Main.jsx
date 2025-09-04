@@ -25,28 +25,50 @@ const Main = () => {
           <>
             <div className="greet">
               <p>
-                <span>Hello, Ayush.</span>
+                <span>Hello, DEV.</span>
               </p>
               <p>How can I help you today?</p>
             </div>
             <div className="cards">
-              <div className="card">
-                <p>Suggest beautiful place to see on an upcoming road trip</p>
-                <img src={assets.compass_icon} alt="Compass" />
-              </div>
-              <div className="card">
-                <p>Briefly summarize this concept: Urban Planning</p>
-                <img src={assets.bulb_icon} alt="Bulb" />
-              </div>
-              <div className="card">
-                <p>Brainstorm team bonding activities for our work retreat</p>
-                <img src={assets.message_icon} alt="Message" />
-              </div>
-              <div className="card">
-                <p>Improve the readability of the following code</p>
-                <img src={assets.code_icon} alt="Code" />
-              </div>
+  <div
+    className="card"
+    onClick={() =>
+      onSent("Suggest beautiful place to see on an upcoming road trip")
+    }
+  >
+    <p>Suggest beautiful place to see on an upcoming road trip</p>
+    <img src={assets.compass_icon} alt="Compass" />
+  </div>
+
+  <div
+    className="card"
+    onClick={() => onSent("Briefly summarize this concept: Urban Planning")}
+  >
+    <p>Briefly summarize this concept: Urban Planning</p>
+    <img src={assets.bulb_icon} alt="Bulb" />
+  </div>
+
+  <div
+    className="card"
+    onClick={() =>
+      onSent("Brainstorm team bonding activities for our work retreat")
+    }
+  >
+    <p>Brainstorm team bonding activities for our work retreat</p>
+    <img src={assets.message_icon} alt="Message" />
+  </div>
+
+  <div
+    className="card"
+    onClick={() =>
+      onSent("Improve the readability of the following code")
+    }
+  >
+    <p>Help me to fix the Error in my code</p>
+    <img src={assets.code_icon} alt="Code" />
+  </div>
             </div>
+
           </>
         ) : (
           <div className="result">
@@ -82,13 +104,14 @@ const Main = () => {
             <div>
               <img src={assets.gallery_icon} alt="Gallery" />
               <img src={assets.mic_icon} alt="Mic" />
-              <img onClick={onSent} src={assets.send_icon} alt="Send" />
+              {input ? <img onClick={onSent} src={assets.send_icon} alt="Send" /> :null}
             </div>
           </div>
           <p className="bottom-info">
             Disclaimer: I’m still learning, and I may occasionally be incorrect.
           </p>
         </div>
+
       </div>
     </div>
   );
